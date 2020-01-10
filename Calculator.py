@@ -18,7 +18,14 @@ def clr() :
 	global equa
 	equa = '' 
 
+def del_one():
+	global equa
+	equa = equa[:-1]
+	equation.set(equa)
+
 root = Tk()
+root.minsize(150,100)
+root.maxsize(200,200)
 
 # Creating dynamic variable
 equation = StringVar()
@@ -78,6 +85,12 @@ Btnequ.grid(row = 4, column = 2)
 
 Btnclr = Button(root, text='C', command = clr)
 Btnclr.grid(row = 4, column = 0)
+
+Btndot = Button(root, text='.', command = lambda : btnPress('.'))
+Btndot.grid(row = 1, column = 4)
+
+Btndel = Button(root, text='X', command = del_one)
+Btndel.grid(row = 2, column = 4)
 
 
 root.mainloop()
