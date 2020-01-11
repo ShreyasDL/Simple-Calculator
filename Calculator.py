@@ -1,4 +1,4 @@
-from tkinter import * 
+from tkinter import *
 
 equa = ''
 
@@ -16,7 +16,7 @@ def calc() :
 def clr() :
 	equation.set('')
 	global equa
-	equa = '' 
+	equa = ''
 
 def del_one():
 	global equa
@@ -91,6 +91,12 @@ Btndot.grid(row = 1, column = 4)
 
 Btndel = Button(root, text='X', command = del_one)
 Btndel.grid(row = 2, column = 4)
+
+Btn_par_left = Button(root, text='(', command = lambda : btnPress('('))
+Btn_par_left.grid(row = 3, column = 4)
+
+Btn_par_right = Button(root, text=')', command = lambda : btnPress(')'))
+Btn_par_right.grid(row = 4, column = 4)
 
 
 root.mainloop()
