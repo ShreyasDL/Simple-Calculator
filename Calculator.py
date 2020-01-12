@@ -9,7 +9,8 @@ def btnPress(num) :
 
 def calc() :
 	global equa
-	soln = str(eval(equa))
+	c=equa.replace('^','**')
+	soln = str(eval(c))
 	equation.set(soln)
 	equa = ''
 
@@ -97,6 +98,9 @@ Btn_par_left.grid(row = 3, column = 4)
 
 Btn_par_right = Button(root, text=')', command = lambda : btnPress(')'))
 Btn_par_right.grid(row = 4, column = 4)
+
+Btn_pow = Button(root, text='^', command = lambda : btnPress('^'))
+Btn_pow.grid(row = 1, column = 5)
 
 
 root.mainloop()
